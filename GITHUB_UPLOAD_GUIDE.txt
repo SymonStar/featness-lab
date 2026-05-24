@@ -1,0 +1,65 @@
+========================================
+GITHUB PAGES UPLOAD GUIDE - FEATNESS LAB
+========================================
+
+STEP 1: CREATE GITHUB ACCOUNT
+------------------------------
+1. Go to https://github.com
+2. Click "Sign up"
+3. Create your account (free)
+
+STEP 2: CREATE NEW REPOSITORY
+------------------------------
+1. Click the "+" icon (top right) → "New repository"
+2. Repository name: "featness-lab" (or any name you want)
+3. Description: "Fitness website with workout and nutrition plans"
+4. Make it PUBLIC (required for free GitHub Pages)
+5. DO NOT check "Add a README file"
+6. Click "Create repository"
+
+STEP 3: UPLOAD YOUR FILES
+--------------------------
+Option A - Via Web Interface (Easiest):
+1. On your new repository page, click "uploading an existing file"
+2. Drag ALL files and folders from "updated featness" folder
+3. Wait for upload to complete
+4. Scroll down, click "Commit changes"
+
+Option B - Via GitHub Desktop (Recommended):
+1. Download GitHub Desktop: https://desktop.github.com
+2. Install and sign in
+3. Click "Add" → "Add existing repository"
+4. Choose your "updated featness" folder
+5. Click "Publish repository"
+
+STEP 4: ENABLE GITHUB PAGES
+----------------------------
+1. Go to your repository on GitHub.com
+2. Click "Settings" tab
+3. Scroll down to "Pages" (left sidebar)
+4. Under "Source", select "main" branch
+5. Click "Save"
+6. Wait 1-2 minutes
+
+STEP 5: ACCESS YOUR WEBSITE
+----------------------------
+Your website will be at:
+https://YOUR-USERNAME.github.io/featness-lab/featness.html
+
+Example: https://symon123.github.io/featness-lab/featness.html
+
+IMPORTANT NOTES:
+----------------
+- All files must be uploaded including subfolders
+- Keep folder structure exactly as it is
+- Images must be in the same folders
+- First page is "featness.html" (your homepage)
+- Changes take 1-2 minutes to appear online
+
+TROUBLESHOOTING:
+----------------
+- If images don't show: Check that image files uploaded correctly
+- If links don't work: Make sure all folders uploaded with correct names
+- If page is blank: Wait 2-3 minutes and refresh
+
+========================================

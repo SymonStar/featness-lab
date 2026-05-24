@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FEATness LAB – Workout Dashboard</title>
+  <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #353535;
+      --nav-bg: #1e1e1e;
+      --accent: #cbea00;
+      --red:    #e84040;
+      --white:  #ffffff;
+      --muted:  #c0c0c0;
+      --border: rgba(255,255,255,0.12);
+    }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Garet', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* FULL WIDTH NAVIGATION */
+    nav {
+      background: var(--nav-bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 8%; /* Spans wide on desktops */
+      width: 100%;
+    }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 56px; width: auto; mix-blend-mode: screen; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; margin-left: -6px; }
+    .logo-feat { font-size: 32px; font-weight: 800; font-style: italic; color: var(--white); letter-spacing: -1px; }
+    .logo-ness-lab { display: flex; align-items: center; gap: 3px; margin-top: -4px; }
+    .logo-ness { font-size: 13px; font-weight: 700; font-style: italic; color: var(--accent); letter-spacing: 1px; }
+    .logo-lab { font-size: 15px; font-weight: 800; background: var(--accent); color: var(--nav-bg); padding: 1px 5px; border-radius: 2px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--white); font-size: 14px; font-weight: 700; font-family: 'Garet', sans-serif; }
+    .nav-links a.active { color: var(--accent); }
+
+    /* WEBSITE CONTENT AREA (No restricted container box) */
+    .page { 
+      width: 100%;
+      max-width: 1400px; /* Expands across standard monitors */
+      margin: 0 auto; 
+      padding: 50px 8% 80px; 
+      flex-grow: 1;
+    }
+
+    /* Top Dashboard Status Bar */
+    .dashboard-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 20px;
+    }
+    .level-badge {
+      font-size: 14px; 
+      font-weight: 800;
+      letter-spacing: 2px; 
+      text-transform: uppercase; 
+    }
+    .level-badge .val { color: #2ecc71; }
+
+    .goal {
+      font-size: 24px; 
+      font-weight: 400;
+      line-height: 1.4;
+    }
+    .goal b { font-weight: 800; }
+
+    /* DAY SECTIONS */
+    .day-section { margin-bottom: 60px; }
+    .day-title { font-size: 24px; font-weight: 700; padding-bottom: 10px; margin-bottom: 15px; }
+    .day-title .day   { color: var(--accent); font-style: italic; }
+    .day-title .focus { color: var(--white); }
+
+    /* FULL DISPLAY TABLE */
+    .ex-table { width: 100%; border-collapse: collapse; }
+    .ex-table tr { border-top: 1px solid var(--border); }
+    .ex-table tr:last-child { border-bottom: 1px solid var(--border); }
+    .ex-table td { padding: 20px 15px; vertical-align: middle; }
+
+    .td-name {
+      width: 35%; font-size: 18px;
+      color: var(--accent); font-weight: 700;
+    }
+    .td-img {
+      width: 35%; text-align: center;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      padding: 10px 20px !important;
+    }
+    .td-img img {
+      width: 100%; max-width: 280px; height: 85px;
+      object-fit: contain; border-radius: 6px; display: inline-block;
+      background-color: #222; border: 1px solid #444;
+    }
+    .td-reps {
+      width: 30%; font-size: 18px;
+      color: var(--accent); text-align: right; font-weight: 700;
+    }
+
+    /* FULL WIDTH FOOTER */
+    footer {
+      background: #202020; 
+      padding: 40px 8% 30px;
+      display: grid; 
+      grid-template-columns: 1fr 1fr 1fr; 
+      gap: 40px;
+      width: 100%;
+      margin-top: auto;
+    }
+    .footer-col h4 {
+      font-size: 12px; font-weight: 800; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 15px; color: var(--white);
+    }
+    .footer-col a, .footer-col p {
+      display: block; font-size: 13px; color: var(--muted);
+      text-decoration: none; line-height: 2.2;
+    }
+    .footer-col .lbl { font-weight: 700; color: var(--white); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="" alt="">
+    <div class="logo-text" style="margin-left:0;">
+      <span class="logo-feat">FEAT</span>
+      <div class="logo-ness-lab">
+        <span class="logo-ness">ness</span>
+        <span class="logo-lab">LAB</span>
+      </div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="featness.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="workout.html" class="active">Workout</a></li>
+    <li><a href="nutrition.html">Nutrition</a></li>
+    <li><a href="#">Lifestyle</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  
+  <div class="dashboard-meta">
+    <p class="goal"><b>GOAL:</b> Burn fat, improve stamina, and build a workout habit.</p>
+    <div class="level-badge">WORK OUT LEVEL:&nbsp;<span class="val">Beginner</span></div>
+  </div>
+
+  <div class="day-section">
+    <div class="day-title"><span class="day">Monday</span> <span class="focus">- Cardio</span></div>
+    <table class="ex-table">
+      <tr>
+        <td class="td-name">Walking</td>
+        <td class="td-img"><img src="" alt="Steady-state walking cycle graphic"></td>
+        <td class="td-reps">20 minutes</td>
+      </tr>
+      <tr>
+        <td class="td-name">Jumping Jacks</td>
+        <td class="td-img"><img src="" alt="Jumping jacks movement cycle diagrams"></td>
+        <td class="td-reps">3 sets x 20 reps</td>
+      </tr>
+      <tr>
+        <td class="td-name">Light Jog</td>
+        <td class="td-img"><img src="" alt="Light running or jogging motion layout"></td>
+        <td class="td-reps">10 minutes</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="day-section">
+    <div class="day-title"><span class="day">Wednesday</span> <span class="focus">- Full Body</span></div>
+    <table class="ex-table">
+      <tr>
+        <td class="td-name">Squats</td>
+        <td class="td-img"><img src="" alt="Proper form alignment squat posture"></td>
+        <td class="td-reps">3 sets x 12 reps</td>
+      </tr>
+      <tr>
+        <td class="td-name">Push-ups</td>
+        <td class="td-img"><img src="" alt="Standard floor level chest push-ups posture"></td>
+        <td class="td-reps">3 sets x 8 reps</td>
+      </tr>
+      <tr>
+        <td class="td-name">Plank</td>
+        <td class="td-img"><img src="" alt="Forearm bridge plank core stabilization posture"></td>
+        <td class="td-reps">3 sets x 20 reps</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="day-section">
+    <div class="day-title"><span class="day">Friday</span> <span class="focus">- Cardio</span></div>
+    <table class="ex-table">
+      <tr>
+        <td class="td-name">Stretching</td>
+        <td class="td-img"><img src="" alt="Pre and post routine body flexibility stretch poses"></td>
+        <td class="td-reps">10 minutes</td>
+      </tr>
+      <tr>
+        <td class="td-name">Walking</td>
+        <td class="td-img"><img src="" alt="Active outdoor recovery walking routine style"></td>
+        <td class="td-reps">30 minutes</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <a href="featness.html">Home</a>
+    <a href="workout.html">Workout Plans</a>
+    <a href="#">About Us</a>
+    <a href="#">Nutrition</a>
+    <a href="#">Lifestyle</a>
+  </div>
+  <div class="footer-col">
+    <h4>References</h4>
+  </div>
+  <div class="footer-col">
+    <h4>Contact Us</h4>
+    <p><span class="lbl">ADDRESS:</span> Angeles City, Pampanga</p>
+    <p><span class="lbl">EMAIL:</span> featnesslab@gmail.com</p>
+    <p><span class="lbl">PHONE:</span> +63 912 345 6789</p>
+  </div>
+</footer>
+
+</body>
+</html>

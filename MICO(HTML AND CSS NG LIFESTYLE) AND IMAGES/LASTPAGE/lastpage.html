@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEATNESS LAB - Lifestyle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #222222;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Color Variables */
+        :root {
+            --lime-neon: #CCFF00;
+            --green-bright: #00CC66;
+            --dark-bg: #222222;
+            --darker-bg: #1A1A1A;
+            --purple-border: #7F00FF;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background-color: var(--dark-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: -1px;
+        }
+
+        .logo-icon {
+            color: var(--lime-neon);
+            margin-right: 8px;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            text-transform: uppercase;
+        }
+
+        .logo-sub {
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .logo-highlight {
+            color: var(--lime-neon);
+            font-style: italic;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a.active-green {
+            color: var(--green-bright);
+        }
+
+        .nav-links a.active-lime {
+            color: var(--lime-neon);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background-color: var(--dark-bg);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .hero-section p {
+            color: var(--lime-neon);
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        /* --- GRID SYSTEM --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+        }
+
+        .grid-text-block {
+            display: flex;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .content-wrapper {
+            max-width: 450px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .grid-text-block h2 {
+            font-size: 42px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .grid-text-block ul {
+            list-style: none;
+        }
+
+        .grid-text-block ul li {
+            font-size: 24px;
+            font-weight: 700;
+            font-style: italic;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        /* Custom bullet styling */
+        .grid-text-block ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Background & Text Variations */
+        .lime-bg {
+            background-color: var(--lime-neon);
+        }
+
+        .text-dark {
+            color: #000000;
+        }
+
+        .dark-bg {
+            background-color: var(--dark-bg);
+        }
+
+        .text-lime {
+            color: var(--lime-neon);
+        }
+
+        .grid-image-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            min-height: 350px;
+        }
+
+        /* --- MOTIVATION BOX --- */
+        .motivation-section {
+            background-color: var(--darker-bg);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .motivation-border {
+            border: 4px solid var(--purple-border);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .motivation-border h2 {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .motivation-border p {
+            color: var(--lime-neon);
+            font-size: 22px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: var(--darker-bg);
+            border-top: 2px solid #333;
+            padding: 60px 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--lime-neon);
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .footer-column p strong {
+            font-style: italic;
+        }
+
+        /* --- RESPONSIVE DESIGN (Mobile Friendly) --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links a {
+                margin: 0 10px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr; /* Stack everything vertically */
+            }
+
+            /* Fix order for swapped blocks on mobile so it consistently flows: Text -> Image */
+            .row-reverse-text {
+                grid-row: 3;
+            }
+            .row-reverse-img {
+                grid-row: 4;
+            }
+            .grid-container > div:nth-child(7) { /* Mental health text */
+                grid-row: 7;
+            }
+            .grid-container > div:nth-child(8) { /* Mental health image */
+                grid-row: 8;
+            }
+
+            .grid-text-block {
+                padding: 40px 20px;
+            }
+
+            .grid-text-block h2 {
+                font-size: 32px;
+            }
+
+            .grid-text-block ul li {
+                font-size: 18px;
+            }
+
+            .footer {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="logo-icon">▲</div>
+            <div class="logo-text">FEAT<span class="logo-sub">NESS</span><span class="logo-highlight">LAB</span></div>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Workout</a>
+            <a href="#" class="active-white">Nutrition</a>
+            <a href="#" class="active-lime">Lifestyle</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h1>LIFE STYLE</h1>
+        <p>Build healthy daily habits</p>
+    </section>
+
+    <section class="grid-container">
+        
+        <div class="grid-text-block lime-bg text-dark">
+            <div class="content-wrapper">
+                <h2>SLEEP</h2>
+                <ul>
+                    <li>7–8 hours daily</li>
+                    <li>Helps recovery and energy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid-image-block">
+            <img src="images/sleep.png" alt="Sleep">
+        </div>
+
+        <div class="grid-image-block row-reverse-img">
+            <img src="images/hydraton.png" alt="Hydration">
+        </div>
+        <div class="grid-text-block dark-bg text-lime row-reverse-text">
+            <div class="content-wrapper">
+                <h2>Hydration</h2>
+                <ul>
+                    <li>Drink 8–10 glasses of water</li>
+                    <li>Improves focus and performance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-text-block lime-bg text-dark">
+            <div class="content-wrapper">
+                <h2>ACTIVITY</h2>
+                <ul>
+                    <li>Stay active every day</li>
+                    <li>Walk, stretch, or exercise</li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid-image-block">
+            <img src="images/activity.png" alt="Activity">
+        </div>
+
+        <div class="grid-image-block">
+            <img src="images/mental4.png" alt="Mental Health">
+        </div>
+        <div class="grid-text-block dark-bg text-lime">
+            <div class="content-wrapper">
+                <h2>MENTAL HEALTH</h2>
+                <ul>
+                    <li>Stay positive</li>
+                    <li>Avoid stress</li>
+                    <li>Take break when needed</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="motivation-section">
+        <div class="motivation-border">
+            <h2>MOTIVATION BOX</h2>
+            <p>Discipline creates results, not motivation.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>QUICK LINKS</h3>
+            <a href="#">Home</a>
+            <a href="#">Workout Plans</a>
+            <a href="#">About Us</a>
+            <a href="#">Nutrition</a>
+            <a href="#">Lifestyle</a>
+        </div>
+        <div class="footer-column">
+            <h3>REFERENCES</h3>
+        </div>
+        <div class="footer-column">
+            <h3>CONTACT US</h3>
+            <p><strong>ADDRESS:</strong> Angeles City, Pampanga</p>
+            <p><strong>EMAIL:</strong> featnesslab@email.com</p>
+            <p><strong>PHONE:</strong> +63 912 345 6789</p>
+        </div>
+    </footer>
+
+</body>
+</html>
